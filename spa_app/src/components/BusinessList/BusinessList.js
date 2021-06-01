@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BusinessList.css'
 import Business from '../Business/Business'
 
-function BusinessList() {
+const BusinessList = (props) => {
+    const { businesses } = props
+
+
 
     return (
         <>
             <div class="BusinessList">
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
+                {
+                    businesses.map(business =>{
+                    return <Business business={business}/>
+                    })
+                }
 
             </div>
         </>
